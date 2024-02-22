@@ -11,7 +11,7 @@
 
 
     Sub Main()
-        'GetDB()
+        GetDB()
         'Dim empDAL As New OjoREGEDApp.DAL.GetEmployeeSP()
         'Dim employee As Employee = empDAL.GetByName(2)
         'Console.WriteLine("{0}-{1}-{2}-{3}-{4}", employee.EmpId, employee.EmpFirstName, employee.EmpMidName, employee.EmpLastName, employee.EmpTelp)
