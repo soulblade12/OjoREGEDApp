@@ -17,9 +17,9 @@
         'Console.WriteLine("{0}-{1}-{2}-{3}-{4}", employee.EmpId, employee.EmpFirstName, employee.EmpMidName, employee.EmpLastName, employee.EmpTelp)
 
 
-        Dim custDAL As New OjoREGEDApp.DAL.GetEmployeeSP
-        Dim employee = custDAL.GetByName(2)
-        Console.WriteLine("{0}-{1}-{2}-{3}-{4}", employee.EmpId, employee.EmpFirstName, employee.EmpMidName, employee.EmpLastName, employee.EmpTelp)
+        'Dim custDAL As New OjoREGEDApp.DAL.GetEmployeeSP
+        'Dim employee = custDAL.GetByName(2)
+        'Console.WriteLine("{0}-{1}-{2}-{3}-{4}", employee.EmpId, employee.EmpFirstName, employee.EmpMidName, employee.EmpLastName, employee.EmpTelp)
 
     End Sub
 
