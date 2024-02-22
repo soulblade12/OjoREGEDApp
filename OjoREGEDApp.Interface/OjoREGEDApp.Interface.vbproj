@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>OjoREGEDApp.Interface</RootNamespace>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OjoREGEDApp.DAL\OjoREGEDApp.DAL.vbproj" />
+  </ItemGroup>
+
+</Project>
