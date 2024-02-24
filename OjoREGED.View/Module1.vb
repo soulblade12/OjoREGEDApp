@@ -1,6 +1,8 @@
 ﻿Imports OjoREGEDApp.BO
 
 Module Module1
+
+
     Sub GetAllEmployee()
 
         Dim empDAL As New OjoREGEDApp.DAL.EmployeeSP
@@ -26,10 +28,15 @@ Module Module1
         Dim empDAL As New OjoREGEDApp.DAL.EmployeeSP
         empDAL.AddUser(name_First, name_Mid, name_Last, Telp)
     End Sub
-
+    Sub AddEmployeeLocation(EmployeeID As Integer, EmployeeAddress As String, EmployeeCity As String, EmployeeProvince As String, EmployeePostal As String)
+        Dim empDAL As New OjoREGEDApp.DAL.EmployeeSP
+        empDAL.AddEmployeeLoc(EmployeeID, EmployeeAddress, EmployeeCity, EmployeeProvince, EmployeePostal)
+    End Sub
 
     Sub Main()
 
+        'insert new location for employee
+        'AddEmployeeLocation(15, "Jalan Kenangan", "Wakatobi", "Lampung", "55162")
 
 
     End Sub
