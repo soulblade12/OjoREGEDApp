@@ -140,5 +140,28 @@ Public Class EmployeeSP
         End Try
     End Function
 
+    Public Function CreateEmployeeSchedule(IdEmployee As Integer, Datebook As Date, MaxOrder As Integer) As Object Implements Iemployee.CreateEmployeeSchedule
+        Try
+            Dim Strstoreprod = "dbo.CreateEmployeeSchedule"
+            cmd = New SqlCommand(Strstoreprod, conn)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.AddWithValue("@EmployeeID", IdEmployee)
+            cmd.Parameters.AddWithValue("@Date", Datebook)
+            cmd.Parameters.AddWithValue("@MaxOrder", MaxOrder)
 
+            conn.Open()
+            Dim result = cmd.ExecuteNonQuery()
+            If result <> 1 Then
+                Throw New ArgumentException("Schedule not created")
+            End If
+            Return result
+        Catch sqlex As SqlException
+            Throw New ArgumentException(sqlex.Message & " " & sqlex.Number)
+        Catch ex As Exception
+            Throw ex
+        Finally
+            cmd.Dispose()
+            conn.Close()
+        End Try
+    End Function
 End Class

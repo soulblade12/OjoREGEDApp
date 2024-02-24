@@ -2,7 +2,7 @@
 
 Module Module1
 
-
+    'EMPLOYEE
     Sub GetAllEmployee()
 
         Dim empDAL As New OjoREGEDApp.DAL.EmployeeSP
@@ -33,11 +33,29 @@ Module Module1
         empDAL.AddEmployeeLoc(EmployeeID, EmployeeAddress, EmployeeCity, EmployeeProvince, EmployeePostal)
     End Sub
 
+    Sub AddSchedule(employeeID As Integer, specificDate As Date, maxOrder As Integer)
+
+        Dim empDAL As New OjoREGEDApp.DAL.EmployeeSP
+        empDAL.CreateEmployeeSchedule(employeeID, specificDate, maxOrder)
+    End Sub
+    'CUSTOMER
+    Sub GetAllCustomer()
+
+        Dim custDAL As New OjoREGEDApp.DAL.CustomerSP
+
+        Dim customer = custDAL.GetAll()
+        For Each cust As Customer In customer
+            Console.WriteLine("{0}-{1}-{2}-{3}-{4}-{5}-{6}", cust.CustID, cust.CustFirstName, cust.CustMiddleName, cust.CustLastName, cust.CustSubcriptionID, cust.CustEmailAddress, cust.CustTelephone)
+        Next
+    End Sub
+
+
     Sub Main()
 
         'insert new location for employee
         'AddEmployeeLocation(15, "Jalan Kenangan", "Wakatobi", "Lampung", "55162")
-
+        'AddSchedule(5, #2/24/2024#, 5)
+        GetAllCustomer()
 
     End Sub
 
