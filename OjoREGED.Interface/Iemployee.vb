@@ -1,7 +1,9 @@
 ﻿Imports OjoREGEDApp.BO
 
-Public Interface Iemployee(Of T)
+
+Public Interface Iemployee
     Inherits ICrud(Of Employee)
 
-    Function GetByName(ByVal id As Integer) As T
+    Function GetByName(id As Integer)
+    Sub AddUser(firstName As String, middleName As String, lastName As String, telephone As String)
 End Interface
